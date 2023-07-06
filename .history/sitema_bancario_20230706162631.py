@@ -8,4 +8,3 @@ menu =  """"
 => """
 
 saldo = 0 
-limite = 500

@@ -6,6 +6,3 @@ menu =  """"
 [q] Sair
 
 => """
-
-saldo = 0 
-limite = 500
