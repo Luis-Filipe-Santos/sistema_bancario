@@ -32,9 +32,4 @@ while True:
         
         excedeu_saldo = valor > saldo 
         
-        excedeu_limite = valor > limite 
-        
-        excedeu_saques = numero_saques >= LIMITE_SAQUES
-        
-        if excedeu_saldo:
-            print("Operação falhou! Você não tem saldo suficiente.")
+        excedeu_saldo = valor > saldo 
