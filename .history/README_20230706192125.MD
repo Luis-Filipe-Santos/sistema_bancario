@@ -1,0 +1,30 @@
+# Desafio do Bootcamp Potência Tech | Ciências de Dados com Python
+
+Este projeto foi desenvolvido como parte do 1° desafio do Bootcamp Potência Tech powered by iFood | Ciências de Dados com Python.
+
+## Descrição do Projeto
+
+O projeto consiste em um sistema bancário simples implementado em Python. O sistema permite realizar operações básicas, como depósito, saque e exibição de extrato. Ele foi desenvolvido como uma versão inicial, contando com apenas um usuário e não sendo necessário identificar o número de agência e conta.
+
+## Funcionalidades
+
+- Depósito: permite realizar depósitos de valores positivos com até duas casas decimais.
+- Saque: permite realizar até três saques diários de até R$500.00. Verifica o saldo disponível antes de efetuar o saque.
+- Extrato: exibe o histórico de transações, incluindo depósitos e saques realizados, e o saldo atual.
+
+## Como Executar
+
+1. Certifique-se de ter o Python instalado em seu sistema.
+2. Faça o download ou clone este repositório em sua máquina.
+3. Navegue até o diretório do projeto no terminal.
+4. Execute o arquivo `banco.py` digitando o comando `python banco.py`.
+5. Siga as instruções exibidas no menu para realizar as operações desejadas.
+
+## Autor
+
+Nome: Luis Filipe Santos Silva
+Contato: luissilva.filipesantos@gmail.com
+
+## Licença
+
+Este projeto está licenciado sob a MIT. Veja o arquivo LICENSE para obter mais detalhes.
