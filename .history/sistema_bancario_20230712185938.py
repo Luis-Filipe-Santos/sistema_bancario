@@ -1,4 +1,3 @@
-# ----------------- funções
 class Cliente:
     def __init__(self, nome, data_nascimento, cpf, endereco):
         self.nome = nome
@@ -94,7 +93,7 @@ def main():
     lista_usuarios = []
     lista_contas = []
     
-# ----------------- Menu
+# Menu
     while True:
         print('\n===== MENU =====')
         print('Opções: (d)Depósito, (s)Saque, (e)Extrato, (v)Visualizar clientes, (c)Criar usuário, (a)Associar conta, (q)SAIR')

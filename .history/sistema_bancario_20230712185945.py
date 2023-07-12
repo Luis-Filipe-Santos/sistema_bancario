@@ -1,4 +1,3 @@
-# ----------------- funções
 class Cliente:
     def __init__(self, nome, data_nascimento, cpf, endereco):
         self.nome = nome
