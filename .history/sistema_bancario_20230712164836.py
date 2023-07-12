@@ -38,7 +38,7 @@ def main():
 
     while True:
         print('\n===== MENU =====')
-        print('Opções: (d)Depósito, (s)Saque, (e)Extrato, (q)Sair')
+        print('Opções: (d)Depósito, (s)Saque, (e)xtrato, (q)uit')
         opcao = input('Selecione uma opção: ')
 
         if opcao == 'd':
