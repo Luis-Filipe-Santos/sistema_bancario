@@ -95,7 +95,7 @@ def main():
 
     while True:
         print('\n===== MENU =====')
-        print('Opções: (d)Depósito, (s)Saque, (e)Extrato, (v)Visualizar clientes, (c)Criar usuário, (a)Associar conta, (q)SAIR')
+        print('Opções: (d)Depósito, (s)aque, (e)xtrato, (v)isualizar clientes, (c)riar usuário, (a)ssociar conta, (q)uit')
         opcao = input('Selecione uma opção: ')
 
         if opcao == 'd':
