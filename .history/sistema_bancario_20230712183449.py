@@ -43,8 +43,7 @@ class ContaCorrente:
         return self.saldo, extrato
 
     def imprimir_extrato(self, *, extrato):
-        print('Extrato:')
-        for movimento in extrato[-5:]:
+        for movimento in extrato:
             print(movimento)
         print(f'Saldo atual: R${self.saldo:.2f}')
 
@@ -52,8 +51,8 @@ class ContaCorrente:
 def criar_cliente():
     nome = input('Nome: ')
     data_nascimento = input('Data de Nascimento (dd/mm/aaaa): ')
-    cpf = input('CPF: ')
-    endereco = input('Endereço: ')
+    cpf = input('CPF (com pontos e digito): ')
+    endereco = input('Endereço (): ')
 
     return Cliente(nome, data_nascimento, cpf, endereco)
 
@@ -76,78 +75,35 @@ def vincular_conta_corrente(lista_contas, lista_usuarios):
         print('CPF não encontrado.')
 
 
-def visualizar_clientes(lista_contas):
-    for conta in lista_contas:
-        cliente = conta.cliente
-        print(f'Nome: {cliente.nome}')
-        print(f'Data de Nascimento: {cliente.data_nascimento}')
-        print(f'CPF: {cliente.cpf}')
-        print(f'Endereço: {cliente.endereco}')
-        print(f'Agência: {conta.agencia}')
-        print(f'Número da Conta: {conta.numero_conta}')
-        print(f'Saldo: R${conta.saldo:.2f}')
-        print('---')
-
-
 def main():
     lista_usuarios = []
     lista_contas = []
 
     while True:
         print('\n===== MENU =====')
-        print('Opções: (d)epósito, (s)aque, (e)xtrato, (v)isualizar clientes, (c)riar usuário, (a)ssociar conta, (q)uit')
+        print('Opções: (d)epósito, (s)aque, (e)xtrato, (c)riar usuário, (v)incular conta, (q)uit')
         opcao = input('Selecione uma opção: ')
 
         if opcao == 'd':
             valor = float(input('Digite o valor a ser depositado: '))
-            conta_numero = int(input('Digite o número da conta: '))
-
-            for index, conta in enumerate(lista_contas):
-                if conta.numero_conta == conta_numero:
-                    saldo, extrato = conta.deposito(valor, extrato=[])
-                    print(f'Saldo atual: R${saldo:.2f}')
-                    break
-            else:
-                print('Conta não encontrada.')
-
+            saldo, extrato = deposito(valor, extrato=[])
+            print(f'Saldo atual: R${saldo:.2f}')
         elif opcao == 's':
             limite = 500.0
-            conta_numero = int(input('Digite o número da conta: '))
-
-            for index, conta in enumerate(lista_contas):
-                if conta.numero_conta == conta_numero:
-                    extrato = []
-                    saldo, extrato = conta.saque(limite=limite, extrato=extrato)
-                    print(f'Saldo atual: R${saldo:.2f}')
-                    break
-            else:
-                print('Conta não encontrada.')
-
+            extrato = []
+            saldo, extrato = saque(limite=limite, extrato=extrato)
+            print(f'Saldo atual: R${saldo:.2f}')
         elif opcao == 'e':
-            conta_numero = int(input('Digite o número da conta: '))
-
-            for index, conta in enumerate(lista_contas):
-                if conta.numero_conta == conta_numero:
-                    extrato = []
-                    conta.imprimir_extrato(extrato=conta.extrato)
-                    break
-            else:
-                print('Conta não encontrada.')
-
-        elif opcao == 'v':
-            visualizar_clientes(lista_contas)
-
+            extrato = []
+            imprimir_extrato(extrato=extrato)
         elif opcao == 'c':
             usuario = criar_cliente()
             lista_usuarios.append(usuario)
             print('Usuário criado com sucesso.')
-
-        elif opcao == 'a':
+        elif opcao == 'v':
             vincular_conta_corrente(lista_contas, lista_usuarios)
-
         elif opcao == 'q':
             break
-
         else:
             print('Opção inválida. Tente novamente.')
 
